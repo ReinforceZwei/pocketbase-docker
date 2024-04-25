@@ -26,11 +26,14 @@ There are multiple configuration & files directories that are mounted into the c
 
 **pb_migrations** is optional, this directory allows you to version your DB structure. See https://pocketbase.io/docs/js-migrations/. (supported in this docker image since version 0.20.8)
 
+**pb_hooks** is optional, this directory enables you to write custom server-side code using plain JavaScript. See https://pocketbase.io/docs/js-overview/.
+
 ```yml
 volumes:
   - /path/to/data:/pb_data
   - /path/to/public:/pb_public
   - /path/to/migrations:/pb_migrations
+  - /path/to/hooks:/pb_hooks
 ```
 
 ## PocketBase
@@ -65,4 +68,5 @@ services:
       - /path/to/data:/pb_data
       - /path/to/public:/pb_public
       - /path/to/migrations:/pb_migrations
+      - /path/to/hooks:/pb_hooks
 ```
